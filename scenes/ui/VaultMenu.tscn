@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=3 uid://vaultmenu123]
+
+[ext_resource type="Script" path="res://scripts/ui/VaultMenu.gd" id="1"]
+
+[node name="VaultMenu" type="CanvasLayer"]
+script = ExtResource("1")
+layer = 20
+visible = false
+
+[node name="Background" type="ColorRect" parent="."]
+color = Color(0, 0, 0, 0.8)
+anchors_preset = 15
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 3
+anchors_preset = 15
+offset_left = 50
+offset_top = 50
+offset_right = -50
+offset_bottom = -50
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+
+[node name="Header" type="HBoxContainer" parent="Panel/VBox"]
+
+[node name="Title" type="Label" parent="Panel/VBox/Header"]
+text = "THE VAULT"
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 0
+custom_minimum_size_y = 60
+
+[node name="CloseBtn" type="Button" parent="Panel/VBox/Header"]
+text = "×"
+flat = true
+custom_minimum_size = Vector2(40, 40)
+theme_override_font_sizes/font_size = 24
+
+[node name="TabBar" type="TabBar" parent="Panel/VBox"]
+tab_count = 2
+tab_0_text = "Power"
+tab_1_text = "Enemy"
+
+[node name="TabsContainer" type="VBoxContainer" parent="Panel/VBox"]
+v_size_flags = 2
+
+[node name="PowerTab" type="ScrollContainer" parent="Panel/VBox/TabsContainer"]
+h_size_flags = 2
+v_size_flags = 2
+
+[node name="PowerContainer" type="VBoxContainer" parent="Panel/VBox/TabsContainer/PowerTab"]
+theme_override_constants/v_separation = 10
+
+[node name="EnemyTab" type="ScrollContainer" parent="Panel/VBox/TabsContainer"]
+h_size_flags = 2
+v_size_flags = 2
+
+[node name="EnemyContainer" type="VBoxContainer" parent="Panel/VBox/TabsContainer/EnemyTab"]
+theme_override_constants/v_separation = 10
+
+[node name="Footer" type="HBoxContainer" parent="Panel/VBox"]
+custom_minimum_size_y = 50
+
+[node name="KeyDisplay" type="HBoxContainer" parent="Panel/VBox/Footer"]
+theme_override_constants/h_separation = 10
+
+[node name="KeyIcon" type="Label" parent="Panel/VBox/Footer/KeyDisplay"]
+text = "🔑"
+theme_override_font_sizes/font_size = 20
+
+[node name="KeyAmount" type="Label" parent="Panel/VBox/Footer/KeyDisplay"]
+text = "0"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.9, 0.7, 0.2, 1)

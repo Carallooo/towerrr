@@ -1,0 +1,100 @@
+[gd_scene load_steps=2 format=3 uid://tourneymenu123]
+
+[ext_resource type="Script" path="res://scripts/ui/TournamentMenu.gd" id="1"]
+
+[node name="TournamentMenu" type="CanvasLayer"]
+script = ExtResource("1")
+layer = 20
+visible = false
+
+[node name="Background" type="ColorRect" parent="."]
+color = Color(0, 0, 0, 0.8)
+anchors_preset = 15
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 3
+anchors_preset = 15
+offset_left = 50
+offset_top = 50
+offset_right = -50
+offset_bottom = -50
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+
+[node name="Header" type="HBoxContainer" parent="Panel/VBox"]
+
+[node name="Title" type="Label" parent="Panel/VBox/Header"]
+text = "TOURNAMENTS"
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 0
+custom_minimum_size_y = 60
+
+[node name="CloseBtn" type="Button" parent="Panel/VBox/Header"]
+text = "×"
+flat = true
+custom_minimum_size = Vector2(40, 40)
+theme_override_font_sizes/font_size = 24
+
+[node name="LeagueInfo" type="VBoxContainer" parent="Panel/VBox"]
+theme_override_constants/v_separation = 10
+
+[node name="LeagueLabel" type="Label" parent="Panel/VBox/LeagueInfo"]
+text = "League: Copper"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 18
+
+[node name="RankLabel" type="Label" parent="Panel/VBox/LeagueInfo"]
+text = "Rank: 1"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 16
+
+[node name="TicketDisplay" type="HBoxContainer" parent="Panel/VBox/LeagueInfo"]
+theme_override_constants/h_separation = 10
+alignment = 1
+
+[node name="TicketIcon" type="Label" parent="Panel/VBox/LeagueInfo/TicketDisplay"]
+text = "🎫"
+theme_override_font_sizes/font_size = 20
+
+[node name="TicketAmount" type="Label" parent="Panel/VBox/LeagueInfo/TicketDisplay"]
+text = "0"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(1, 0.5, 0.8, 1)
+
+[node name="EnterBtn" type="Button" parent="Panel/VBox/LeagueInfo"]
+text = "Enter Tournament"
+custom_minimum_size_y = 40
+custom_minimum_size_x = 200
+
+[node name="RewardsPanel" type="ScrollContainer" parent="Panel/VBox"]
+v_size_flags = 2
+
+[node name="RewardsContainer" type="VBoxContainer" parent="Panel/VBox/RewardsPanel"]
+theme_override_constants/v_separation = 5
+
+[node name="Footer" type="HBoxContainer" parent="Panel/VBox"]
+custom_minimum_size_y = 50
+
+[node name="GemDisplay" type="HBoxContainer" parent="Panel/VBox/Footer"]
+theme_override_constants/h_separation = 10
+
+[node name="GemIcon" type="Label" parent="Panel/VBox/Footer/GemDisplay"]
+text = "💎"
+theme_override_font_sizes/font_size = 20
+
+[node name="GemAmount" type="Label" parent="Panel/VBox/Footer/GemDisplay"]
+text = "0"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.3, 0.9, 0.7, 1)
+
+[node name="StoneDisplay" type="HBoxContainer" parent="Panel/VBox/Footer"]
+theme_override_constants/h_separation = 10
+
+[node name="StoneIcon" type="Label" parent="Panel/VBox/Footer/StoneDisplay"]
+text = "🔮"
+theme_override_font_sizes/font_size = 20
+
+[node name="StoneAmount" type="Label" parent="Panel/VBox/Footer/StoneDisplay"]
+text = "0"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.7, 0.4, 1, 1)

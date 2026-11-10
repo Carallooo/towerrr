@@ -1,0 +1,175 @@
+[gd_scene load_steps=2 format=3 uid://labsmenu123]
+
+[ext_resource type="Script" path="res://scripts/ui/LabsMenu.gd" id="1"]
+
+[node name="LabsMenu" type="CanvasLayer"]
+script = ExtResource("1")
+layer = 20
+visible = false
+
+[node name="Background" type="ColorRect" parent="."]
+color = Color(0, 0, 0, 0.8)
+anchors_preset = 15
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 3
+anchors_preset = 15
+offset_left = 50
+offset_top = 50
+offset_right = -50
+offset_bottom = -50
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+
+[node name="Header" type="HBoxContainer" parent="Panel/VBox"]
+
+[node name="Title" type="Label" parent="Panel/VBox/Header"]
+text = "LABS"
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 0
+custom_minimum_size_y = 60
+
+[node name="CloseBtn" type="Button" parent="Panel/VBox/Header"]
+text = "×"
+flat = true
+custom_minimum_size = Vector2(40, 40)
+theme_override_font_sizes/font_size = 24
+
+[node name="SlotBar" type="HBoxContainer" parent="Panel/VBox"]
+custom_minimum_size_y = 50
+
+[node name="SlotLabel" type="Label" parent="Panel/VBox/SlotBar"]
+text = "Slots:"
+theme_override_font_sizes/font_size = 18
+
+[node name="SlotButtons" type="HBoxContainer" parent="Panel/VBox/SlotBar"]
+theme_override_constants/h_separation = 5
+
+[node name="CategoryTabs" type="TabBar" parent="Panel/VBox"]
+tab_count = 11
+tab_0_text = "Main"
+tab_1_text = "Attack"
+tab_2_text = "Defense"
+tab_3_text = "Utility"
+tab_4_text = "UW"
+tab_5_text = "Cards"
+tab_6_text = "Perks"
+tab_7_text = "Bots"
+tab_8_text = "Modules"
+tab_9_text = "Enemies"
+tab_10_text = "Battle Cond."
+
+[node name="TabsContainer" type="VBoxContainer" parent="Panel/VBox"]
+v_size_flags = 2
+
+[node name="MainTab" type="ScrollContainer" parent="Panel/VBox/TabsContainer"]
+h_size_flags = 2
+v_size_flags = 2
+
+[node name="MainContainer" type="VBoxContainer" parent="Panel/VBox/TabsContainer/MainTab"]
+theme_override_constants/v_separation = 10
+
+[node name="AttackTab" type="ScrollContainer" parent="Panel/VBox/TabsContainer"]
+h_size_flags = 2
+v_size_flags = 2
+
+[node name="AttackContainer" type="VBoxContainer" parent="Panel/VBox/TabsContainer/AttackTab"]
+theme_override_constants/v_separation = 10
+
+[node name="DefenseTab" type="ScrollContainer" parent="Panel/VBox/TabsContainer"]
+h_size_flags = 2
+v_size_flags = 2
+
+[node name="DefenseContainer" type="VBoxContainer" parent="Panel/VBox/TabsContainer/DefenseTab"]
+theme_override_constants/v_separation = 10
+
+[node name="UtilityTab" type="ScrollContainer" parent="Panel/VBox/TabsContainer"]
+h_size_flags = 2
+v_size_flags = 2
+
+[node name="UtilityContainer" type="VBoxContainer" parent="Panel/VBox/TabsContainer/UtilityTab"]
+theme_override_constants/v_separation = 10
+
+[node name="UWTab" type="ScrollContainer" parent="Panel/VBox/TabsContainer"]
+h_size_flags = 2
+v_size_flags = 2
+
+[node name="UWContainer" type="VBoxContainer" parent="Panel/VBox/TabsContainer/UWTab"]
+theme_override_constants/v_separation = 10
+
+[node name="CardsTab" type="ScrollContainer" parent="Panel/VBox/TabsContainer"]
+h_size_flags = 2
+v_size_flags = 2
+
+[node name="CardsContainer" type="VBoxContainer" parent="Panel/VBox/TabsContainer/CardsTab"]
+theme_override_constants/v_separation = 10
+
+[node name="PerksTab" type="ScrollContainer" parent="Panel/VBox/TabsContainer"]
+h_size_flags = 2
+v_size_flags = 2
+
+[node name="PerksContainer" type="VBoxContainer" parent="Panel/VBox/TabsContainer/PerksTab"]
+theme_override_constants/v_separation = 10
+
+[node name="BotsTab" type="ScrollContainer" parent="Panel/VBox/TabsContainer"]
+h_size_flags = 2
+v_size_flags = 2
+
+[node name="BotsContainer" type="VBoxContainer" parent="Panel/VBox/TabsContainer/BotsTab"]
+theme_override_constants/v_separation = 10
+
+[node name="ModulesTab" type="ScrollContainer" parent="Panel/VBox/TabsContainer"]
+h_size_flags = 2
+v_size_flags = 2
+
+[node name="ModulesContainer" type="VBoxContainer" parent="Panel/VBox/TabsContainer/ModulesTab"]
+theme_override_constants/v_separation = 10
+
+[node name="EnemiesTab" type="ScrollContainer" parent="Panel/VBox/TabsContainer"]
+h_size_flags = 2
+v_size_flags = 2
+
+[node name="EnemiesContainer" type="VBoxContainer" parent="Panel/VBox/TabsContainer/EnemiesTab"]
+theme_override_constants/v_separation = 10
+
+[node name="BattleTab" type="ScrollContainer" parent="Panel/VBox/TabsContainer"]
+h_size_flags = 2
+v_size_flags = 2
+
+[node name="BattleContainer" type="VBoxContainer" parent="Panel/VBox/TabsContainer/BattleTab"]
+theme_override_constants/v_separation = 10
+
+[node name="Footer" type="HBoxContainer" parent="Panel/VBox"]
+custom_minimum_size_y = 50
+
+[node name="CellDisplay" type="HBoxContainer" parent="Panel/VBox/Footer"]
+theme_override_constants/h_separation = 10
+
+[node name="CellIcon" type="Label" parent="Panel/VBox/Footer/CellDisplay"]
+text = "🧬"
+theme_override_font_sizes/font_size = 20
+
+[node name="CellAmount" type="Label" parent="Panel/VBox/Footer/CellDisplay"]
+text = "0"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.9, 0.3, 0.9, 1)
+
+[node name="GemDisplay" type="HBoxContainer" parent="Panel/VBox/Footer"]
+theme_override_constants/h_separation = 10
+
+[node name="GemIcon" type="Label" parent="Panel/VBox/Footer/GemDisplay"]
+text = "💎"
+theme_override_font_sizes/font_size = 20
+
+[node name="GemAmount" type="Label" parent="Panel/VBox/Footer/GemDisplay"]
+text = "0"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.3, 0.9, 0.7, 1)
+
+[node name="SpeedDisplay" type="HBoxContainer" parent="Panel/VBox/Footer"]
+h_size_flags = 2
+alignment = 2
+
+[node name="SpeedLabel" type="Label" parent="Panel/VBox/Footer/SpeedDisplay"]
+text = "Lab Speed: 1.0x"
+theme_override_font_sizes/font_size = 16

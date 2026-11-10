@@ -1,0 +1,111 @@
+[gd_scene load_steps=2 format=3 uid://modulesmenu123]
+
+[ext_resource type="Script" path="res://scripts/ui/ModulesMenu.gd" id="1"]
+
+[node name="ModulesMenu" type="CanvasLayer"]
+script = ExtResource("1")
+layer = 20
+visible = false
+
+[node name="Background" type="ColorRect" parent="."]
+color = Color(0, 0, 0, 0.8)
+anchors_preset = 15
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 3
+anchors_preset = 15
+offset_left = 50
+offset_top = 50
+offset_right = -50
+offset_bottom = -50
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+
+[node name="Header" type="HBoxContainer" parent="Panel/VBox"]
+
+[node name="Title" type="Label" parent="Panel/VBox/Header"]
+text = "MODULES"
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 0
+custom_minimum_size_y = 60
+
+[node name="CloseBtn" type="Button" parent="Panel/VBox/Header"]
+text = "×"
+flat = true
+custom_minimum_size = Vector2(40, 40)
+theme_override_font_sizes/font_size = 24
+
+[node name="ModuleSlots" type="HBoxContainer" parent="Panel/VBox"]
+v_size_flags = 2
+theme_override_constants/h_separation = 20
+
+[node name="CannonSlot" type="VBoxContainer" parent="Panel/VBox/ModuleSlots"]
+h_size_flags = 2
+
+[node name="CannonLabel" type="Label" parent="Panel/VBox/ModuleSlots/CannonSlot"]
+text = "CANNON ATTACK"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 16
+
+[node name="CannonModule" type="PanelContainer" parent="Panel/VBox/ModuleSlots/CannonSlot"]
+v_size_flags = 2
+
+[node name="ArmorSlot" type="VBoxContainer" parent="Panel/VBox/ModuleSlots"]
+h_size_flags = 2
+
+[node name="ArmorLabel" type="Label" parent="Panel/VBox/ModuleSlots/ArmorSlot"]
+text = "ARMOR DEFENSE"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 16
+
+[node name="ArmorModule" type="PanelContainer" parent="Panel/VBox/ModuleSlots/ArmorSlot"]
+v_size_flags = 2
+
+[node name="GeneratorSlot" type="VBoxContainer" parent="Panel/VBox/ModuleSlots"]
+h_size_flags = 2
+
+[node name="GeneratorLabel" type="Label" parent="Panel/VBox/ModuleSlots/GeneratorSlot"]
+text = "GENERATOR UTILITY"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 16
+
+[node name="GeneratorModule" type="PanelContainer" parent="Panel/VBox/ModuleSlots/GeneratorSlot"]
+v_size_flags = 2
+
+[node name="CoreSlot" type="VBoxContainer" parent="Panel/VBox/ModuleSlots"]
+h_size_flags = 2
+
+[node name="CoreLabel" type="Label" parent="Panel/VBox/ModuleSlots/CoreSlot"]
+text = "CORE UW"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 16
+
+[node name="CoreModule" type="PanelContainer" parent="Panel/VBox/ModuleSlots/CoreSlot"]
+v_size_flags = 2
+
+[node name="Footer" type="HBoxContainer" parent="Panel/VBox"]
+custom_minimum_size_y = 50
+
+[node name="ShardDisplay" type="HBoxContainer" parent="Panel/VBox/Footer"]
+theme_override_constants/h_separation = 10
+
+[node name="ShardIcon" type="Label" parent="Panel/VBox/Footer/ShardDisplay"]
+text = "✨"
+theme_override_font_sizes/font_size = 20
+
+[node name="ShardAmount" type="Label" parent="Panel/VBox/Footer/ShardDisplay"]
+text = "0"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(1, 0.5, 0.8, 1)
+
+[node name="StoneDisplay" type="HBoxContainer" parent="Panel/VBox/Footer"]
+theme_override_constants/h_separation = 10
+
+[node name="StoneIcon" type="Label" parent="Panel/VBox/Footer/StoneDisplay"]
+text = "🔮"
+theme_override_font_sizes/font_size = 20
+
+[node name="StoneAmount" type="Label" parent="Panel/VBox/Footer/StoneDisplay"]
+text = "0"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.7, 0.4, 1, 1)

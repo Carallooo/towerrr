@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=3 uid://eventsmenu123]
+
+[ext_resource type="Script" path="res://scripts/ui/EventsMenu.gd" id="1"]
+
+[node name="EventsMenu" type="CanvasLayer"]
+script = ExtResource("1")
+layer = 20
+visible = false
+
+[node name="Background" type="ColorRect" parent="."]
+color = Color(0, 0, 0, 0.8)
+anchors_preset = 15
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 3
+anchors_preset = 15
+offset_left = 50
+offset_top = 50
+offset_right = -50
+offset_bottom = -50
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+
+[node name="Header" type="HBoxContainer" parent="Panel/VBox"]
+
+[node name="Title" type="Label" parent="Panel/VBox/Header"]
+text = "EVENTS & MISSIONS"
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 0
+custom_minimum_size_y = 60
+
+[node name="CloseBtn" type="Button" parent="Panel/VBox/Header"]
+text = "×"
+flat = true
+custom_minimum_size = Vector2(40, 40)
+theme_override_font_sizes/font_size = 24
+
+[node name="CurrentEvent" type="PanelContainer" parent="Panel/VBox"]
+custom_minimum_size_y = 120
+
+[node name="EventName" type="Label" parent="Panel/VBox/CurrentEvent"]
+text = "No Active Event"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 20
+
+[node name="EventProgress" type="ProgressBar" parent="Panel/VBox/CurrentEvent"]
+min_value = 0.0
+max_value = 1.0
+value = 0.0
+custom_minimum_size_y = 10
+
+[node name="EventRewards" type="HBoxContainer" parent="Panel/VBox/CurrentEvent"]
+theme_override_constants/h_separation = 20
+alignment = 1
+
+[node name="MissionsPanel" type="ScrollContainer" parent="Panel/VBox"]
+v_size_flags = 2
+
+[node name="MissionsContainer" type="VBoxContainer" parent="Panel/VBox/MissionsPanel"]
+theme_override_constants/v_separation = 5
+
+[node name="EventShop" type="ScrollContainer" parent="Panel/VBox"]
+v_size_flags = 2
+
+[node name="ShopContainer" type="VBoxContainer" parent="Panel/VBox/EventShop"]
+theme_override_constants/v_separation = 5
+
+[node name="Footer" type="HBoxContainer" parent="Panel/VBox"]
+custom_minimum_size_y = 50
+
+[node name="MedalDisplay" type="HBoxContainer" parent="Panel/VBox/Footer"]
+theme_override_constants/h_separation = 10
+
+[node name="MedalIcon" type="Label" parent="Panel/VBox/Footer/MedalDisplay"]
+text = "🏅"
+theme_override_font_sizes/font_size = 20
+
+[node name="MedalAmount" type="Label" parent="Panel/VBox/Footer/MedalDisplay"]
+text = "0"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(1, 0.6, 0.1, 1)

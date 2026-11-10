@@ -1,0 +1,236 @@
+[gd_scene load_steps=2 format=3 uid://hud123456789]
+
+[ext_resource type="Script" path="res://scripts/ui/HUD.gd" id="1"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1")
+layer = 10
+
+[node name="TopBar" type="HBoxContainer" parent="."]
+layout_mode = 2
+anchors_preset = 9
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="TierWave" type="VBoxContainer" parent="TopBar"]
+custom_minimum_size_x = 150
+
+[node name="TierLabel" type="Label" parent="TopBar/TierWave"]
+text = "Tier 1"
+horizontal_alignment = 0
+theme_override_font_sizes/font_size = 18
+
+[node name="WaveLabel" type="Label" parent="TopBar/TierWave"]
+text = "Wave 0"
+horizontal_alignment = 0
+theme_override_font_sizes/font_size = 14
+
+[node name="Spacer1" type="Control" parent="TopBar"]
+h_size_flags = 2
+
+[node name="Currencies" type="HBoxContainer" parent="TopBar"]
+h_size_flags = 2
+
+[node name="CashDisplay" type="HBoxContainer" parent="TopBar/Currencies"]
+theme_override_constants/h_separation = 5
+
+[node name="CashIcon" type="Label" parent="TopBar/Currencies/CashDisplay"]
+text = "💵"
+theme_override_font_sizes/font_size = 16
+
+[node name="CashAmount" type="Label" parent="TopBar/Currencies/CashDisplay"]
+text = "0"
+horizontal_alignment = 0
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.2, 0.8, 0.3, 1)
+
+[node name="CoinsDisplay" type="HBoxContainer" parent="TopBar/Currencies"]
+theme_override_constants/h_separation = 5
+
+[node name="CoinsIcon" type="Label" parent="TopBar/Currencies/CoinsDisplay"]
+text = "🪙"
+theme_override_font_sizes/font_size = 16
+
+[node name="CoinsAmount" type="Label" parent="TopBar/Currencies/CoinsDisplay"]
+text = "0"
+horizontal_alignment = 0
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(1, 0.8, 0.2, 1)
+
+[node name="GemsDisplay" type="HBoxContainer" parent="TopBar/Currencies"]
+theme_override_constants/h_separation = 5
+
+[node name="GemsIcon" type="Label" parent="TopBar/Currencies/GemsDisplay"]
+text = "💎"
+theme_override_font_sizes/font_size = 16
+
+[node name="GemsAmount" type="Label" parent="TopBar/Currencies/GemsDisplay"]
+text = "500"
+horizontal_alignment = 0
+theme_override_font_sizes/font_size = 14
+theme_override_colors/font_color = Color(0.3, 0.9, 0.7, 1)
+
+[node name="Spacer2" type="Control" parent="TopBar"]
+h_size_flags = 2
+
+[node name="GameSpeed" type="HBoxContainer" parent="TopBar"]
+
+[node name="SpeedLabel" type="Label" parent="TopBar/GameSpeed"]
+text = "Speed: 1.0x"
+horizontal_alignment = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="SpeedSlider" type="HSlider" parent="TopBar/GameSpeed"]
+min_value = 1.0
+max_value = 5.0
+step = 0.5
+value = 1.0
+custom_minimum_size_x = 100
+
+[node name="CenterInfo" type="VBoxContainer" parent="."]
+layout_mode = 2
+anchors_preset = 5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150
+offset_top = -80
+offset_right = 150
+offset_bottom = -10
+
+[node name="WaveTimer" type="ProgressBar" parent="CenterInfo"]
+min_value = 0.0
+max_value = 1.0
+value = 0.0
+custom_minimum_size_y = 8
+
+[node name="EnemyCount" type="Label" parent="CenterInfo"]
+text = "Enemies: 0"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 12
+
+[node name="BottomBar" type="HBoxContainer" parent="."]
+layout_mode = 2
+anchors_preset = 12
+anchor_right = 1.0
+anchor_top = 1.0
+offset_left = 10
+offset_top = -90
+offset_right = -10
+offset_bottom = -10
+
+[node name="MenuButtons" type="HBoxContainer" parent="BottomBar"]
+h_size_flags = 2
+theme_override_constants/h_separation = 10
+
+[node name="BtnWorkshop" type="Button" parent="BottomBar/MenuButtons"]
+text = "Workshop"
+custom_minimum_size_x = 80
+custom_minimum_size_y = 40
+
+[node name="BtnLabs" type="Button" parent="BottomBar/MenuButtons"]
+text = "Labs"
+custom_minimum_size_x = 80
+custom_minimum_size_y = 40
+
+[node name="BtnCards" type="Button" parent="BottomBar/MenuButtons"]
+text = "Cards"
+custom_minimum_size_x = 80
+custom_minimum_size_y = 40
+
+[node name="BtnModules" type="Button" parent="BottomBar/MenuButtons"]
+text = "Modules"
+custom_minimum_size_x = 80
+custom_minimum_size_y = 40
+
+[node name="BtnBots" type="Button" parent="BottomBar/MenuButtons"]
+text = "Bots"
+custom_minimum_size_x = 80
+custom_minimum_size_y = 40
+
+[node name="BtnUW" type="Button" parent="BottomBar/MenuButtons"]
+text = "UW"
+custom_minimum_size_x = 80
+custom_minimum_size_y = 40
+
+[node name="BtnRelics" type="Button" parent="BottomBar/MenuButtons"]
+text = "Relics"
+custom_minimum_size_x = 80
+custom_minimum_size_y = 40
+
+[node name="BtnVault" type="Button" parent="BottomBar/MenuButtons"]
+text = "Vault"
+custom_minimum_size_x = 80
+custom_minimum_size_y = 40
+
+[node name="BtnGuardian" type="Button" parent="BottomBar/MenuButtons"]
+text = "Guardian"
+custom_minimum_size_x = 80
+custom_minimum_size_y = 40
+
+[node name="BtnTournament" type="Button" parent="BottomBar/MenuButtons"]
+text = "Tourney"
+custom_minimum_size_x = 80
+custom_minimum_size_y = 40
+
+[node name="BtnGuild" type="Button" parent="BottomBar/MenuButtons"]
+text = "Guild"
+custom_minimum_size_x = 80
+custom_minimum_size_y = 40
+
+[node name="BtnEvents" type="Button" parent="BottomBar/MenuButtons"]
+text = "Events"
+custom_minimum_size_x = 80
+custom_minimum_size_y = 40
+
+[node name="BtnSettings" type="Button" parent="BottomBar/MenuButtons"]
+text = "⚙"
+custom_minimum_size_x = 50
+custom_minimum_size_y = 40
+
+[node name="RightInfo" type="VBoxContainer" parent="BottomBar"]
+custom_minimum_size_x = 200
+
+[node name="TowerStats" type="VBoxContainer" parent="BottomBar/RightInfo"]
+
+[node name="HealthBar" type="ProgressBar" parent="BottomBar/RightInfo/TowerStats"]
+min_value = 0.0
+max_value = 1.0
+value = 1.0
+custom_minimum_size_y = 12
+
+[node name="HealthText" type="Label" parent="BottomBar/RightInfo/TowerStats"]
+text = "1000 / 1000"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 10
+
+[node name="ShieldBar" type="ProgressBar" parent="BottomBar/RightInfo/TowerStats"]
+min_value = 0.0
+max_value = 1.0
+value = 0.0
+custom_minimum_size_y = 6
+
+[node name="DamageText" type="Label" parent="BottomBar/RightInfo/TowerStats"]
+text = "DMG: 10 | AS: 1.0/s | Range: 300"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 10
+
+[node name="ActiveEffects" type="HBoxContainer" parent="BottomBar/RightInfo"]
+theme_override_constants/h_separation = 5
+
+[node name="UWIndicators" type="HBoxContainer" parent="BottomBar/RightInfo/ActiveEffects"]
+
+[node name="BotIndicators" type="HBoxContainer" parent="BottomBar/RightInfo/ActiveEffects"]
+
+[node name="Notifications" type="VBoxContainer" parent="."]
+layout_mode = 2
+anchors_preset = 6
+anchor_right = 1.0
+anchor_top = 1.0
+offset_left = -350
+offset_top = 100
+offset_right = -20
+offset_bottom = -20

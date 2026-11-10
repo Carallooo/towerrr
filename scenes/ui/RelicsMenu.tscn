@@ -1,0 +1,69 @@
+[gd_scene load_steps=2 format=3 uid://relicsmenu123]
+
+[ext_resource type="Script" path="res://scripts/ui/RelicsMenu.gd" id="1"]
+
+[node name="RelicsMenu" type="CanvasLayer"]
+script = ExtResource("1")
+layer = 20
+visible = false
+
+[node name="Background" type="ColorRect" parent="."]
+color = Color(0, 0, 0, 0.8)
+anchors_preset = 15
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 3
+anchors_preset = 15
+offset_left = 50
+offset_top = 50
+offset_right = -50
+offset_bottom = -50
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+
+[node name="Header" type="HBoxContainer" parent="Panel/VBox"]
+
+[node name="Title" type="Label" parent="Panel/VBox/Header"]
+text = "RELICS"
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 0
+custom_minimum_size_y = 60
+
+[node name="CloseBtn" type="Button" parent="Panel/VBox/Header"]
+text = "×"
+flat = true
+custom_minimum_size = Vector2(40, 40)
+theme_override_font_sizes/font_size = 24
+
+[node name="CategoryTabs" type="TabBar" parent="Panel/VBox"]
+tab_count = 6
+tab_0_text = "All"
+tab_1_text = "Tier"
+tab_2_text = "Tournament"
+tab_3_text = "Events"
+tab_4_text = "Guild"
+tab_5_text = "Anniversary"
+
+[node name="RelicsContainer" type="ScrollContainer" parent="Panel/VBox"]
+h_size_flags = 2
+v_size_flags = 2
+
+[node name="RelicsGrid" type="GridContainer" parent="Panel/VBox/RelicsContainer"]
+columns = 5
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+
+[node name="Footer" type="HBoxContainer" parent="Panel/VBox"]
+custom_minimum_size_y = 50
+
+[node name="MedalDisplay" type="HBoxContainer" parent="Panel/VBox/Footer"]
+theme_override_constants/h_separation = 10
+
+[node name="MedalIcon" type="Label" parent="Panel/VBox/Footer/MedalDisplay"]
+text = "🏅"
+theme_override_font_sizes/font_size = 20
+
+[node name="MedalAmount" type="Label" parent="Panel/VBox/Footer/MedalDisplay"]
+text = "0"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(1, 0.6, 0.1, 1)

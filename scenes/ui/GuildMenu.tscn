@@ -1,0 +1,112 @@
+[gd_scene load_steps=2 format=3 uid://guildmenu123]
+
+[ext_resource type="Script" path="res://scripts/ui/GuildMenu.gd" id="1"]
+
+[node name="GuildMenu" type="CanvasLayer"]
+script = ExtResource("1")
+layer = 20
+visible = false
+
+[node name="Background" type="ColorRect" parent="."]
+color = Color(0, 0, 0, 0.8)
+anchors_preset = 15
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 3
+anchors_preset = 15
+offset_left = 50
+offset_top = 50
+offset_right = -50
+offset_bottom = -50
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+
+[node name="Header" type="HBoxContainer" parent="Panel/VBox"]
+
+[node name="Title" type="Label" parent="Panel/VBox/Header"]
+text = "GUILD"
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 0
+custom_minimum_size_y = 60
+
+[node name="CloseBtn" type="Button" parent="Panel/VBox/Header"]
+text = "×"
+flat = true
+custom_minimum_size = Vector2(40, 40)
+theme_override_font_sizes/font_size = 24
+
+[node name="GuildInfo" type="VBoxContainer" parent="Panel/VBox"]
+theme_override_constants/v_separation = 10
+
+[node name="GuildName" type="Label" parent="Panel/VBox/GuildInfo"]
+text = "No Guild Joined"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 18
+
+[node name="SeasonInfo" type="Label" parent="Panel/VBox/GuildInfo"]
+text = "Season 1 - Week 1/8"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 14
+
+[node name="JoinBtn" type="Button" parent="Panel/VBox/GuildInfo"]
+text = "Join Guild"
+custom_minimum_size_y = 40
+custom_minimum_size_x = 200
+
+[node name="WeeklyChest" type="PanelContainer" parent="Panel/VBox"]
+custom_minimum_size_y = 100
+
+[node name="ChestLabel" type="Label" parent="Panel/VBox/WeeklyChest"]
+text = "Weekly Chest"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 16
+
+[node name="ChestRewards" type="HBoxContainer" parent="Panel/VBox/WeeklyChest"]
+theme_override_constants/h_separation = 20
+alignment = 1
+
+[node name="TokenReward" type="Label" parent="Panel/VBox/WeeklyChest/ChestRewards"]
+text = "150 🎫"
+theme_override_font_sizes/font_size = 14
+
+[node name="BitReward" type="Label" parent="Panel/VBox/WeeklyChest/ChestRewards"]
+text = "185 ⚙️"
+theme_override_font_sizes/font_size = 14
+
+[node name="ClaimBtn" type="Button" parent="Panel/VBox/WeeklyChest"]
+text = "Claim"
+custom_minimum_size_y = 35
+custom_minimum_size_x = 100
+
+[node name="GuildStore" type="ScrollContainer" parent="Panel/VBox"]
+v_size_flags = 2
+
+[node name="StoreContainer" type="VBoxContainer" parent="Panel/VBox/GuildStore"]
+theme_override_constants/v_separation = 5
+
+[node name="Footer" type="HBoxContainer" parent="Panel/VBox"]
+custom_minimum_size_y = 50
+
+[node name="TokenDisplay" type="HBoxContainer" parent="Panel/VBox/Footer"]
+theme_override_constants/h_separation = 10
+
+[node name="TokenIcon" type="Label" parent="Panel/VBox/Footer/TokenDisplay"]
+text = "🎫"
+theme_override_font_sizes/font_size = 20
+
+[node name="TokenAmount" type="Label" parent="Panel/VBox/Footer/TokenDisplay"]
+text = "0"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.2, 0.9, 0.9, 1)
+
+[node name="BitDisplay" type="HBoxContainer" parent="Panel/VBox/Footer"]
+theme_override_constants/h_separation = 10
+
+[node name="BitIcon" type="Label" parent="Panel/VBox/Footer/BitDisplay"]
+text = "⚙️"
+theme_override_font_sizes/font_size = 20
+
+[node name="BitAmount" type="Label" parent="Panel/VBox/Footer/BitDisplay"]
+text = "0"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.5, 0.7, 1, 1)

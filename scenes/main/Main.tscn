@@ -1,0 +1,114 @@
+[gd_scene load_steps=6 format=3 uid://b7hk2j9m8n1o]
+
+[ext_resource type="Script" path="res://scripts/core/GameData.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/core/SaveManager.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/core/WaveManager.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/core/CurrencyManager.gd" id="4"]
+[ext_resource type="Script" path="res://scripts/core/WorkshopManager.gd" id="5"]
+[ext_resource type="Script" path="res://scripts/core/AudioManager.gd" id="6"]
+[ext_resource type="Script" path="res://scripts/core/UIManager.gd" id="7"]
+[ext_resource type="Script" path="res://scripts/core/Main.gd" id="8"]
+[ext_resource type="Script" path="res://scripts/entities/Tower.gd" id="9"]
+[ext_resource type="Script" path="res://scripts/entities/Enemy.gd" id="10"]
+[ext_resource type="Script" path="res://scripts/entities/Projectile.gd" id="11"]
+[ext_resource type="PackedScene" path="res://scenes/ui/HUD.tscn" id="12"]
+[ext_resource type="PackedScene" path="res://scenes/ui/WorkshopMenu.tscn" id="13"]
+[ext_resource type="PackedScene" path="res://scenes/ui/LabsMenu.tscn" id="14"]
+[ext_resource type="PackedScene" path="res://scenes/ui/CardsMenu.tscn" id="15"]
+[ext_resource type="PackedScene" path="res://scenes/ui/ModulesMenu.tscn" id="16"]
+[ext_resource type="PackedScene" path="res://scenes/ui/BotsMenu.tscn" id="17"]
+[ext_resource type="PackedScene" path="res://scenes/ui/UltimateWeaponsMenu.tscn" id="18"]
+[ext_resource type="PackedScene" path="res://scenes/ui/RelicsMenu.tscn" id="19"]
+[ext_resource type="PackedScene" path="res://scenes/ui/VaultMenu.tscn" id="20"]
+[ext_resource type="PackedScene" path="res://scenes/ui/GuardianMenu.tscn" id="21"]
+[ext_resource type="PackedScene" path="res://scenes/ui/TournamentMenu.tscn" id="22"]
+[ext_resource type="PackedScene" path="res://scenes/ui/GuildMenu.tscn" id="23"]
+[ext_resource type="PackedScene" path="res://scenes/ui/EventsMenu.tscn" id="24"]
+[ext_resource type="Script" path="res://scripts/core/GameController.gd" id="28"]
+[ext_resource type="PackedScene" path="res://scenes/ui/SettingsMenu.tscn" id="25"]
+[ext_resource type="PackedScene" path="res://scenes/entities/Enemy.tscn" id="26"]
+[ext_resource type="PackedScene" path="res://scenes/entities/Projectile.tscn" id="27"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("8")
+enemy_scene = ExtResource("26")
+projectile_scene = ExtResource("27")
+
+[node name="Tower" type="Node2D" parent="."]
+script = ExtResource("9")
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Projectiles" type="Node2D" parent="."]
+
+[node name="Effects" type="Node2D" parent="."]
+
+[node name="HUD" type="Node2D" parent="."]
+instance = ExtResource("13")
+
+[node name="Menus" type="Node2D" parent="."]
+
+[node name="WorkshopMenu" type="Node2D" parent="Menus"]
+instance = ExtResource("12")
+
+[node name="LabsMenu" type="Node2D" parent="Menus"]
+instance = ExtResource("13")
+
+[node name="CardsMenu" type="Node2D" parent="Menus"]
+instance = ExtResource("14")
+
+[node name="ModulesMenu" type="Node2D" parent="Menus"]
+instance = ExtResource("15")
+
+[node name="BotsMenu" type="Node2D" parent="Menus"]
+instance = ExtResource("16")
+
+[node name="UltimateWeaponsMenu" type="Node2D" parent="Menus"]
+instance = ExtResource("17")
+
+[node name="RelicsMenu" type="Node2D" parent="Menus"]
+instance = ExtResource("18")
+
+[node name="VaultMenu" type="Node2D" parent="Menus"]
+instance = ExtResource("19")
+
+[node name="GuardianMenu" type="Node2D" parent="Menus"]
+instance = ExtResource("20")
+
+[node name="TournamentMenu" type="Node2D" parent="Menus"]
+instance = ExtResource("21")
+
+[node name="GuildMenu" type="Node2D" parent="Menus"]
+instance = ExtResource("22")
+
+[node name="EventsMenu" type="Node2D" parent="Menus"]
+instance = ExtResource("23")
+
+[node name="SettingsMenu" type="Node2D" parent="Menus"]
+instance = ExtResource("24")
+
+[node name="GlobalManagers" type="Node" parent="."]
+
+[node name="GameData" type="Node" parent="GlobalManagers"]
+script = ExtResource("1")
+
+[node name="SaveManager" type="Node" parent="GlobalManagers"]
+script = ExtResource("2")
+
+[node name="WaveManager" type="Node" parent="GlobalManagers"]
+script = ExtResource("3")
+
+[node name="CurrencyManager" type="Node" parent="GlobalManagers"]
+script = ExtResource("4")
+
+[node name="WorkshopManager" type="Node" parent="GlobalManagers"]
+script = ExtResource("5")
+
+[node name="AudioManager" type="Node" parent="GlobalManagers"]
+script = ExtResource("6")
+
+[node name="UIManager" type="Node" parent="GlobalManagers"]
+script = ExtResource("7")
+
+[node name="GameController" type="Node" parent="GlobalManagers"]
+script = ExtResource("28")

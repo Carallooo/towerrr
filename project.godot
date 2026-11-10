@@ -1,0 +1,39 @@
+[application]
+
+config/name="The Tower Clone"
+config/icon="res://icon.svg"
+run/main_scene="res://scenes/main/Main.tscn"
+
+[display]
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+
+[rendering]
+renderer/rendering_method="forward_plus"
+canvas_rendering/batching/use_batching=true
+canvas_rendering/batching/use_batching_uv_contract=true
+
+[input]
+ui_accept={
+"deadzone": 0.5,
+"events": [{"type": "Key", "keycode": 32, "physical_keycode": 32}, {"type": "JoyButton", "button": 0}]
+}
+ui_cancel={
+"deadzone": 0.5,
+"events": [{"type": "Key", "keycode": 27, "physical_keycode": 27}, {"type": "JoyButton", "button": 1}]
+}
+
+[autoload]
+GameData="res://scripts/core/GameData.gd"
+WaveManager="res://scripts/core/WaveManager.gd"
+CurrencyManager="res://scripts/core/CurrencyManager.gd"
+WorkshopManager="res://scripts/core/WorkshopManager.gd"
+SaveManager="res://scripts/core/SaveManager.gd"
+AudioManager="res://scripts/core/AudioManager.gd"
+UIManager="res://scripts/ui/UIManager.gd"
+GameController="res://scripts/core/GameController.gd"
+
+[physics]
+common/physics_ticks_per_second=60

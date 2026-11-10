@@ -1,0 +1,128 @@
+[gd_scene load_steps=2 format=3 uid://settingsmenu123]
+
+[ext_resource type="Script" path="res://scripts/ui/SettingsMenu.gd" id="1"]
+
+[node name="SettingsMenu" type="CanvasLayer"]
+script = ExtResource("1")
+layer = 20
+visible = false
+
+[node name="Background" type="ColorRect" parent="."]
+color = Color(0, 0, 0, 0.8)
+anchors_preset = 15
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 3
+anchors_preset = 15
+offset_left = 50
+offset_top = 50
+offset_right = -50
+offset_bottom = -50
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+
+[node name="Header" type="HBoxContainer" parent="Panel/VBox"]
+
+[node name="Title" type="Label" parent="Panel/VBox/Header"]
+text = "SETTINGS"
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 0
+custom_minimum_size_y = 60
+
+[node name="CloseBtn" type="Button" parent="Panel/VBox/Header"]
+text = "×"
+flat = true
+custom_minimum_size = Vector2(40, 40)
+theme_override_font_sizes/font_size = 24
+
+[node name="Tabs" type="TabBar" parent="Panel/VBox"]
+tab_count = 4
+tab_0_text = "Audio"
+tab_1_text = "Gameplay"
+tab_2_text = "Graphics"
+tab_3_text = "Account"
+
+[node name="TabsContainer" type="VBoxContainer" parent="Panel/VBox"]
+v_size_flags = 2
+
+[node name="AudioTab" type="VBoxContainer" parent="Panel/VBox/TabsContainer"]
+theme_override_constants/v_separation = 15
+
+[node name="MasterVol" type="HSlider" parent="Panel/VBox/TabsContainer/AudioTab"]
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="MusicVol" type="HSlider" parent="Panel/VBox/TabsContainer/AudioTab"]
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+value = 0.7
+
+[node name="SfxVol" type="HSlider" parent="Panel/VBox/TabsContainer/AudioTab"]
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+value = 0.8
+
+[node name="GameplayTab" type="VBoxContainer" parent="Panel/VBox/TabsContainer"]
+theme_override_constants/v_separation = 15
+
+[node name="AutoBattle" type="CheckButton" parent="Panel/VBox/TabsContainer/GameplayTab"]
+text = "Auto Battle"
+button_group = ""
+
+[node name="ShowDamage" type="CheckButton" parent="Panel/VBox/TabsContainer/GameplayTab"]
+text = "Show Damage Numbers"
+button_group = ""
+
+[node name="ShowHealth" type="CheckButton" parent="Panel/VBox/TabsContainer/GameplayTab"]
+text = "Show Health Bars"
+button_group = ""
+
+[node name="AutoSave" type="CheckButton" parent="Panel/VBox/TabsContainer/GameplayTab"]
+text = "Auto Save"
+button_group = ""
+
+[node name="Notifications" type="CheckButton" parent="Panel/VBox/TabsContainer/GameplayTab"]
+text = "Notifications"
+button_group = ""
+
+[node name="GraphicsTab" type="VBoxContainer" parent="Panel/VBox/TabsContainer"]
+theme_override_constants/v_separation = 15
+
+[node name="ShowFPS" type="CheckButton" parent="Panel/VBox/TabsContainer/GraphicsTab"]
+text = "Show FPS"
+button_group = ""
+
+[node name="ReducedMotion" type="CheckButton" parent="Panel/VBox/TabsContainer/GraphicsTab"]
+text = "Reduced Motion"
+button_group = ""
+
+[node name="HighContrast" type="CheckButton" parent="Panel/VBox/TabsContainer/GraphicsTab"]
+text = "High Contrast"
+button_group = ""
+
+[node name="VSync" type="CheckButton" parent="Panel/VBox/TabsContainer/GraphicsTab"]
+text = "V-Sync"
+button_group = ""
+
+[node name="AccountTab" type="VBoxContainer" parent="Panel/VBox/TabsContainer"]
+theme_override_constants/v_separation = 15
+
+[node name="SaveBtn" type="Button" parent="Panel/VBox/TabsContainer/AccountTab"]
+text = "Save Game Now"
+custom_minimum_size_y = 40
+
+[node name="ExportBtn" type="Button" parent="Panel/VBox/TabsContainer/AccountTab"]
+text = "Export Save"
+custom_minimum_size_y = 40
+
+[node name="ImportBtn" type="Button" parent="Panel/VBox/TabsContainer/AccountTab"]
+text = "Import Save"
+custom_minimum_size_y = 40
+
+[node name="ResetBtn" type="Button" parent="Panel/VBox/TabsContainer/AccountTab"]
+text = "Reset Game (Danger)"
+custom_minimum_size_y = 40

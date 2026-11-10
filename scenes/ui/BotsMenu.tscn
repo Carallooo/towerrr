@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=3 uid://botsmenu123]
+
+[ext_resource type="Script" path="res://scripts/ui/BotsMenu.gd" id="1"]
+
+[node name="BotsMenu" type="CanvasLayer"]
+script = ExtResource("1")
+layer = 20
+visible = false
+
+[node name="Background" type="ColorRect" parent="."]
+color = Color(0, 0, 0, 0.8)
+anchors_preset = 15
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 3
+anchors_preset = 15
+offset_left = 50
+offset_top = 50
+offset_right = -50
+offset_bottom = -50
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+
+[node name="Header" type="HBoxContainer" parent="Panel/VBox"]
+
+[node name="Title" type="Label" parent="Panel/VBox/Header"]
+text = "BOTS"
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 0
+custom_minimum_size_y = 60
+
+[node name="CloseBtn" type="Button" parent="Panel/VBox/Header"]
+text = "×"
+flat = true
+custom_minimum_size = Vector2(40, 40)
+theme_override_font_sizes/font_size = 24
+
+[node name="BotsContainer" type="ScrollContainer" parent="Panel/VBox"]
+h_size_flags = 2
+v_size_flags = 2
+
+[node name="BotsVBox" type="VBoxContainer" parent="Panel/VBox/BotsContainer"]
+theme_override_constants/v_separation = 15
+
+[node name="Footer" type="HBoxContainer" parent="Panel/VBox"]
+custom_minimum_size_y = 50
+
+[node name="MedalDisplay" type="HBoxContainer" parent="Panel/VBox/Footer"]
+theme_override_constants/h_separation = 10
+
+[node name="MedalIcon" type="Label" parent="Panel/VBox/Footer/MedalDisplay"]
+text = "🏅"
+theme_override_font_sizes/font_size = 20
+
+[node name="MedalAmount" type="Label" parent="Panel/VBox/Footer/MedalDisplay"]
+text = "0"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(1, 0.6, 0.1, 1)
+
+[node name="StoneDisplay" type="HBoxContainer" parent="Panel/VBox/Footer"]
+theme_override_constants/h_separation = 10
+
+[node name="StoneIcon" type="Label" parent="Panel/VBox/Footer/StoneDisplay"]
+text = "🔮"
+theme_override_font_sizes/font_size = 20
+
+[node name="StoneAmount" type="Label" parent="Panel/VBox/Footer/StoneDisplay"]
+text = "0"
+theme_override_font_sizes/font_size = 18
+theme_override_colors/font_color = Color(0.7, 0.4, 1, 1)
